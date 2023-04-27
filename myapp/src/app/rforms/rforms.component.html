@@ -1,0 +1,92 @@
+<div class="container m-5 w-25">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="form-group">
+        <div class="col">
+          <label for="username">UserName</label>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="username"
+            required
+          />
+          <span
+            class="small"
+            *ngIf="
+              !signupForm.get('username').valid &&
+              signupForm.get('username').touched
+            "
+            >Please enter a valid username</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <div class="col">
+          <label for="email">Email</label>
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+          <span
+            class="small"
+            *ngIf="
+              !signupForm.get('email').valid && signupForm.get('email').touched
+            "
+            >Please enter a valid email</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="form-group">
+        <div class="col">
+          <label for="secret">Secret Question</label>
+        </div>
+        <div class="col">
+          <select
+            name="secret"
+            id="secret"
+            class="form-control"
+            ngModel
+            required
+          >
+            <option value="pet">Your first pet</option>
+            <option value="car">Your first car</option>
+          </select>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row">
+      <div class="form-group">
+        <div class="col">
+          <label for="gender">Gender</label>
+
+          <div class="radio" *ngFor="let gender of genders">
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                [value]="gender"
+                formControlName="gender"
+              />
+              {{ gender }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary m-2">Submit</button>
+  </form>
+</div>

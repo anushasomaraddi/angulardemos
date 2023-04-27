@@ -1,0 +1,79 @@
+<!-- <h1>My first angular app</h1> -->
+<!-- <app-products></app-products>
+
+<app-warning-alert></app-warning-alert>
+
+<success-alert></success-alert> -->
+<!-- <app-server></app-server> -->
+<!-- <app-names></app-names> -->
+<!-- <app-clicklogs></app-clicklogs> -->
+<!-- <app-products></app-products> -->
+
+<!-- <app-lifecycledemo></app-lifecycledemo> -->
+<!-- <app-accounts></app-accounts> -->
+<div class="container mt-2">
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="nav-item">
+          <a
+            routerLink="/"
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="server" routerLinkActive="active" class="nav-link"
+            >Server</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a
+            routerLink="warningalert"
+            routerLinkActive="active"
+            class="nav-link"
+            >WarningAlert</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="accounts" routerLinkActive="active" class="nav-link"
+            >Accounts</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="observables" routerLinkActive="active" class="nav-link"
+            >Observable</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="tforms" routerLinkActive="active" class="nav-link"
+            >Tforms</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="rforms" routerLinkActive="active" class="nav-link"
+            >Rforms</a
+          >
+        </li>
+        <li role="presentation" class="nav-item">
+          <a routerLink="pipesdemo" routerLinkActive="active" class="nav-link"
+            >Pipesdemo</a
+          >
+        </li>
+
+        <li role="presentation" class="nav-item">
+          <a routerLink="blogposts" routerLinkActive="active" class="nav-link"
+            >Blog</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

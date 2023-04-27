@@ -1,0 +1,71 @@
+<!-- <p>server with id {{ serverId }}is{{ serverStatus }}</p>
+<p>The current status is {{ getServerStatus() }}</p> -->
+<div class="container">
+  <div class="row">
+    <!-- <div class="col">
+      <label for="servername">ServerName</label>
+    </div> -->
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        id="servername"
+        (input)="onUpdateServerName($event)"
+        placeholder="Server Name"
+      />
+    </div>
+
+    <!-- Two-way binding gives components in your application a way to share data. 
+        Use two-way binding to listen for events and update values simultaneously 
+        between parent and child components. -->
+
+    <!-- Two way binding we need to enable ngmodel to work by adding it to the forms module -->
+    <!-- <div class="col">
+      <label for="servername">Server Description</label>
+    </div> -->
+    <!-- property binding we do with []  event binding we do with () -->
+    <!-- <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        id="serverdescription"
+        [(ngmodel)]="serverDescription"
+        placeholder="Server Description"
+      />
+    </div> -->
+    <div class="col">
+      <button class="btn btn-info" [disabled]="serverStatus == 'offline'">
+        {{ serverName }}-{{ serverId }}
+      </button>
+
+      <small class="form-text text-muted">{{ serverDescription }}</small>
+    </div>
+
+    <!-- ngif structural directive that changes the dom -->
+    <div class="col" *ngIf="serverStatus == 'online'; else serverOffline">
+      <button
+        class="btn btn-info btn-lg"
+        (click)="onPowerButtonClick()"
+        [ngStyle]="{ backgroundColor: getServerColour() }"
+      >
+        CPU 50% Memory 40%
+      </button>
+    </div>
+    <ng-template #serverOffline>
+      <div class="col">
+        <button
+          class="btn btn-info btn-lg"
+          (click)="onPowerButtonClick()"
+          [ngStyle]="{ backgroundColor: getServerColour() }"
+        >
+          Server not Running
+        </button>
+      </div>
+    </ng-template>
+    <div class="col">
+      <button class="btn btn-primary btn-sm" (click)="onPowerButtonClick()">
+        {{ status }}
+      </button>
+    </div>
+  </div>
+</div>
